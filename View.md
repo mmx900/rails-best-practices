@@ -2,9 +2,13 @@
 * 접근성 및 성능 측정에 [PageSpeed Insights](https://pagespeed.web.dev), Chrome Performance Insights를 사용한다.
     * 웹서버의 Gzip/Deflate 사용 여부를 확인한다.
 
-## HAML 대비 ERB를 선호하는 이유
+## content_tag 대신 tag 쓰기
 
-HAML이 간결함을 필두로 여러 장점이 있지만, ERB는 다음 강점이 있다.
+과거에는 [content_tag만 블럭을 인자로 줄 수 있었지만](https://stackoverflow.com/questions/20363506/rails-content-tag-vs-tag), 2023년 현재는 tag 역시 가능하기에 content_tag가 아닌 tag만 사용하면 된다. [API 문서](https://api.rubyonrails.org/classes/ActionView/Helpers/TagHelper.html#method-i-tag)에도 content_tag를 'legacy syntax'로 안내하고 있다.
+
+## HAML 대신 ERB 쓰기
+
+HAML이 간결하지만, ERB는 다음 강점이 있다.
 
 * 익숙해지기 쉬움 : HAML이 기본적인 내용은 익히기 쉽지만 데이터 속성에 루비 변수를 바인딩하는 등의 작업에 들어가면 익숙해지는 시간이 필요하다. 대신 결과물은 깔끔하다. ERB는 애초에 PHP 등 다른 언어나 웹 프레임워크를 다뤄봤다면 익숙해질 내용이 거의 없다.
 * 웹에서 코드 스니펫을 적용시 (구글 애널리틱스 적용 코드부터 스택 오버플로우에서 가져온 코드에 이르기까지) 반드시 번역이 필요하다.
