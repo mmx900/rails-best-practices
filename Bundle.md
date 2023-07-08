@@ -1,0 +1,3 @@
+### Private 저장소에서 Gem 설치하기
+
+private 저장소를 사용하기 위해 BUNDLE_GITHUB__COM을 사용할 수 있다. 이때 [ID/비밀번호 혹은 personal OAuth token](https://bundler.io/v2.4/man/bundle-config.1.html)을 사용할 수 있는데, 후자는 `gh auth token`으로 얻을 수 있다. 문제는, 현재 `gh auth token`으로 얻어지는 토큰들은 (CLI 혹은 웹에서) 발행된 목록을 뽑아보거나 개별적으로 revoke 할 수 없다는 것이다. `gh auth logout` 후 `gh auth login` 혹은 `gh auth refresh` 등으로 토큰을 새로 고침 하더라도 이전 토큰을 이용해 깃 저장소에 접근하면 여전히 잘 되는 것을 볼 수 있다. 기존 키들을 무효화하려면, 현재는 https://github.com/settings/applications (Authorized OAuth Apps) 에서 Github CLI 자체를 revoke한 후 다시 인증해야 한다. [참고](https://github.com/cli/cli/issues/2193#issuecomment-725932715) [참고2](https://github.com/cli/cli/issues/2531)
