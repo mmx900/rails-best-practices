@@ -27,6 +27,12 @@ HAML이 간결하지만, ERB는 다음 강점이 있다.
 ## 메시지·I18N
 [은는이가](https://github.com/keepcosmos/ununiga) 젬을 사용하면 '은(는)' 처럼 조사를 결정해야 하는 경우 적절한 조사를 붙여준다.
 
+## 메타태그 선언
+
+파셜이 아닌 일반 페이지의 상단에서 선언한다. (참고: [Discourse](https://github.com/discourse/discourse/blob/ff38bccb8030011ea88060dcd84547d0822aad96/app/views/groups/show.html.erb#L1), [Gitlab](https://gitlab.com/gitlab-org/gitlab/blob/a1ad57aa1e2b4fecc92990d9aafa0f73ad0ff593/app/views/admin/abuse_reports/index.html.haml#L1)) 엄밀히는 뷰에 속하는 내용이므로 뷰단에서 선언하는 것이 자연스럽고, 컨트롤러나 모델에서 선언하는 것에 비해 백엔드 개발자가 아니라도 부담없이 작업할 수 있다. 파셜이 아닌 페이지에 기본으로 넣도록 원칙을 정하면 빼먹는 일이 없다. 모델에서 하는 것보다 유연하고, 의식적으로(혹은 데코레이터를 거쳐서) 뷰 단에서 사용할 내용만 쓰기 때문에, 모델에 선언하는 `as_json`처럼 실수로 보안 관련 내용을 노출시킬 염려가 상대적으로 적다.
+
+설정은 [meta_tags](https://github.com/kpumuk/meta-tags#using-metatags-in-view) 젬을 쓰면 편하다.
+
 ## 이용이 자유로운 템플릿
 
 다음은 MIT 라이선스의 Tailwind 템플릿들.
