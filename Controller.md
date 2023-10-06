@@ -18,6 +18,15 @@ index, new, create를 제외하고는 멤버에 대한 작업으로 간주되기
   end
 ```
 
+`before_action`에서 `except`를 사용하지 않고 다음처럼 쓰는 경우도 있는데, 이 경우 인덱스 페이지에 `?id=123`같은 요청이 들어오면 오동작한다. 이런 쿼리는 직접 의도하지 않더라도 봇들에 의해 무작위로 많이 들어온다.
+
+```ruby
+   def set_user
+     return if params[:id].blank?
+     # ...
+   end
+```
+
 ```ruby
 end
 ```
