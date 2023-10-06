@@ -16,7 +16,7 @@
 
 ### Constantize
 
-위 도구들을 돌려보면 잡히는 문제중에 `params[:something].classify.constantize`(혹은 `safe_constantize`)를 사용한 코드에 많이 나오는 오류는 다음을 참고하자.
+위 도구들을 돌려보면 잡히는 문제중에 `params[:something].classify.constantize`(혹은 `safe_constantize`)를 사용한 코드에 많이 나오는 오류는 다음을 참고한다. Allowlist를 만드는 법을 추천하는데, (비교적 낮은) 보안 위험에 대응하기 위함이 아니더라도 들어오는 클래스를 예상 가능하게 하는 것은 추후 실수를 줄이는 데 도움이 된다.
 
 * https://www.bryanleetc.com/the-dangers-of-constantize-in-rails/
 * http://gavinmiller.io/2016/the-safesty-way-to-constantize/
