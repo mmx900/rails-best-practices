@@ -13,3 +13,10 @@
 
 * [Bearer](https://github.com/Bearer/bearer) ([Action](https://github.com/marketplace/actions/bearer-security))
 * [Salus](https://github.com/coinbase/salus) ([Action](https://github.com/federacy/scan-action))
+
+### Constantize
+
+위 도구들을 돌려보면 잡히는 문제중에 `params[:something].classify.constantize`(혹은 `safe_constantize`)를 사용한 코드에 많이 나오는 오류는 다음을 참고하자.
+
+* https://www.bryanleetc.com/the-dangers-of-constantize-in-rails/
+* http://gavinmiller.io/2016/the-safesty-way-to-constantize/
