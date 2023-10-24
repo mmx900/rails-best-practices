@@ -27,3 +27,13 @@ select count(*) from articles;
 ```
 
 위와 같은 카운트 쿼리는 의외로 비용이 많이 든다. 보통 사용하는 MySQL의 InnoDB는 내부적으로 Row Count를 저장하지 않기 때문이다. 내장 카운트 캐시나 counter culture같은 젬은 연관된 레코드를 보유한 레코드에만 사용 가능하다. 이를 해소하려면 캐시나 별도의 테이블을 활용해야 한다.
+
+### Lint
+
+rubocop-rails 는 DB 선언 내용도 살펴보므로 초기부터 적용하면 도움이 된다. 예를 들면, boolean 필드에 `not null`을 선언하지 않으면 세 가지 상태를 가질 수 있는 위험이 있는데 다음처럼 예방해준다.
+
+```
+db/schema.rb:1705:5: C: Rails/ThreeStateBooleanColumn: Boolean columns should always have a default value and a NOT NULL constraint.
+    t.boolean "email_confirmed", default: false
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
