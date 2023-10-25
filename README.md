@@ -10,6 +10,7 @@
 
 ### Rails 7
 
+* https://github.com/forem/forem (StimulusJS)
 * https://github.com/discourse/discourse (js, ember)
 * https://gitlab.com/gitlab-org/gitlab (js, vue, tiptap)
 
