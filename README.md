@@ -10,17 +10,18 @@
 
 ### Rails 7
 
-* https://github.com/forem/forem (StimulusJS)
-* https://github.com/discourse/discourse (js, ember)
+* https://github.com/forem/forem (StimulusJS, [AGPL 3.0](https://github.com/forem/forem/blob/main/LICENSE.md))
+  * [개발 가이드](https://developers.forem.com/)
+    * 특이사항 : [Service Object 패턴 사용](https://developers.forem.com/backend/service-objects)
+* https://github.com/discourse/discourse (js, ember, [GPL 2.0](https://github.com/discourse/discourse/blob/main/LICENSE.txt))
 * https://gitlab.com/gitlab-org/gitlab (js, vue, tiptap)
-
-### Rails 6
-
-* https://github.com/mastodon/mastodon (js, react)
+  * [개발 가이드](https://docs.gitlab.com/ee/development/contributing/index.html)
+* https://github.com/mastodon/mastodon (js, react, [AGPL 3.0](https://github.com/mastodon/mastodon/blob/main/LICENSE))
 
 ### 그밖에
 
 * https://github.com/asyraffff/Open-Source-Ruby-and-Rails-Apps
+* https://github.com/gramantin/awesome-rails
 
 ### 가이드들
 
