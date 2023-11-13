@@ -9,3 +9,4 @@
 ### jQuery
 
 * https://youmightnotneedjquery.com/ 에서는 jQuery를 일반적인 자바스크립트로 치환하기위한 예시들을 제시한다.
+* [eslint-plugin-jquery](https://github.com/dgraham/eslint-plugin-jquery) 플러그인을 적용할 수 있다.
