@@ -4,6 +4,8 @@ DDL 트랜잭션이 잘 지원되는 DB를 사용하면, 레일즈 마이그레�
 
 또한 PostgreSQL의 경우 색인시 `algorithm: :concurrently`가 지원되기 때문에 [MySQL보다 수월하게 인덱스를 추가](https://stackoverflow.com/a/70858410)할 수 있다. 보통 속도에 문제가 생겼을 정도로 많은 데이터가 쌓였을 때 새로운 인덱스 추가가 고려되기 때문에 매우 유용하다.
 
+MySQL의 경우 [Rails 7에서 추가된 `nulls_first()`, `nulls_last()`를 사용할 수 없기도 하다](https://blog.saeloun.com/2021/10/12/support-nulls_first-for-all-databases/).
+
 ### N+1 문제
 
 [Prosopite](https://github.com/charkost/prosopite) 같은 젬을 사용하면 로그에서 경고를 보는 것에서 예외를 발생시켜 프로그램을 중단시키는 것 까지 가능하자. 프로젝트 시작시 미리 세팅해두자.
