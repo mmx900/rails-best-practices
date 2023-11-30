@@ -43,3 +43,7 @@ db/schema.rb:1705:5: C: Rails/ThreeStateBooleanColumn: Boolean columns should al
     t.boolean "email_confirmed", default: false
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
+
+### 데이터 타입
+
+* URL 유형 : https://github.com/perfectline/validates_url
