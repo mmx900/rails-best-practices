@@ -37,3 +37,6 @@
 * Service Object Pattern
     * https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/
     * https://intersect.whitefusion.io/the-art-of-code/why-service-objects-are-an-anti-pattern
+* `# frozen_string_literal: true`
+    * [Style/FrozenStringLiteralComment always on #181](https://github.com/standardrb/standard/pull/181)
+    * [Ruby's Frozen String Comment: YAGNI](https://jakeworth.com/frozen-string-comment-yagni/)https://jakeworth.com/frozen-string-comment-yagni/
