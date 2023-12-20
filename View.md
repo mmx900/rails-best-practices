@@ -2,6 +2,12 @@
 * 접근성 및 성능 측정에 [PageSpeed Insights](https://pagespeed.web.dev), Chrome Performance Insights를 사용한다.
     * 웹서버의 Gzip/Deflate 사용 여부를 확인한다.
 
+## Importmaps와 HTTP/2
+
+크롬의 경우, [HTTP 1에서는 TCP 연결이 6개로 제한된다.](https://stackoverflow.com/a/29564247) JS를 사용할 때 하나의 JS파일(예: application.js)로 패키징하는 대신 레일스 7에서부터 권장하기 시작한 [Import map](https://github.com/rails/importmap-rails)을 쓰면 큰 파일 하나 대신 작은 파일 여럿을 불러오는 구조가 되는데, 이때 HTTP 1을 쓴다면 앞의 크롬 특성과 맞물려 JS 파일 요청이 어셋과도 경합하면서 로딩이 매우 늦어지게 된다.
+
+[관련 Puma 이슈](https://github.com/puma/puma/issues/2697)
+
 ## content_tag 대신 tag 쓰기
 
 과거에는 [content_tag만 블럭을 인자로 줄 수 있었지만](https://stackoverflow.com/questions/20363506/rails-content-tag-vs-tag), 2023년 현재는 tag 역시 가능하기에 content_tag가 아닌 tag만 사용하면 된다. [API 문서](https://api.rubyonrails.org/classes/ActionView/Helpers/TagHelper.html#method-i-tag)에도 content_tag를 'legacy syntax'로 안내하고 있다.
