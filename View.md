@@ -8,6 +8,13 @@
 
 [관련 Puma 이슈](https://github.com/puma/puma/issues/2697)
 
+이러한 HTTP/2로의 이행이 원활하지 않은 경우, 다음 방법들을 생각해볼수 있다.
+
+* 가급적 jsdelivr 등의 CDN 라이브러리 활용
+* [svgeez](https://github.com/jgarber623/svgeez)를 활용해 어셋을 HTML 내에 내장
+* 이미지에 대한 [loading=lazy](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#loading) 설정
+* StimulusJS 사용시 [lazy load 활용](https://github.com/hotwired/stimulus-rails#usage-with-import-map)
+
 ## content_tag 대신 tag 쓰기
 
 과거에는 [content_tag만 블럭을 인자로 줄 수 있었지만](https://stackoverflow.com/questions/20363506/rails-content-tag-vs-tag), 2023년 현재는 tag 역시 가능하기에 content_tag가 아닌 tag만 사용하면 된다. [API 문서](https://api.rubyonrails.org/classes/ActionView/Helpers/TagHelper.html#method-i-tag)에도 content_tag를 'legacy syntax'로 안내하고 있다.
