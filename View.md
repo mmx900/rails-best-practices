@@ -50,6 +50,8 @@ HAML이 간결하지만, ERB는 다음 강점이 있다.
 
 일반적으로 테일윈드에서 디자인 시스템의 컴퍼넌트를 반영할때는 역시 사용하는 프레임웍의 컴퍼넌트를 사용할 것을 권하지만, React처럼 클라이언트측 프레임워크가 아닌 ERB 템플릿 같은 경우 버튼 같은 작은 항목에 파셜을 만드는 것은 오버킬처럼 느껴질 수 있다. 이때는 `@apply`를 사용해 커스텀 CSS를 사용하고, 대신 보다 큰 단위에는 파셜을 쓴다. ([Reusing Styles](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply) 참고)
 
+* [Performance Impact of Using Ruby on Rails View Partials](https://scoutapm.com/blog/performance-impact-of-using-ruby-on-rails-view-partials) - 파셜 사용 유무와 사용 방식에 따른 성능 차이를 볼 수 있다.
+
 ## 이용이 자유로운 템플릿
 
 다음은 MIT 라이선스의 Tailwind 템플릿들.
