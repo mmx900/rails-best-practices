@@ -10,6 +10,10 @@ MySQL의 경우 [Rails 7에서 추가된 `nulls_last()`를 사용할 수 없기�
 
 [Prosopite](https://github.com/charkost/prosopite) 같은 젬을 사용하면 로그에서 경고를 보는 것에서 예외를 발생시켜 프로그램을 중단시키는 것 까지 가능하자. 프로젝트 시작시 미리 세팅해두자.
 
+#### lint
+
+[양방향 관계](https://guides.rubyonrails.org/association_basics.html#bi-directional-associations)에 대해 이해하면 추가적인 쿼리를 줄일 수 있다. standard-rails(rubocop-rails)의 [Rails/InverseOf](https://www.rubydoc.info/gems/rubocop/0.61.1/RuboCop/Cop/Rails/InverseOf) 같은 Cop은 이 문제를 파악할 수 있게 해준다.
+
 ### MySQL
 
 보통 많이 사용하는 것이 `order by created_at desc, id desc` 인데 적절한 인덱스를 생성해두지 않으면 Filescan, Backward Index Scan 이 되어 레코드가 많아질수록 느려진다. 정렬순서를 포함해 다음처럼 추가할 수 있다.
