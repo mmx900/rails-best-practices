@@ -51,3 +51,16 @@ db/schema.rb:1705:5: C: Rails/ThreeStateBooleanColumn: Boolean columns should al
 ### 데이터 타입
 
 * URL 유형 : https://github.com/perfectline/validates_url
+
+#### Date 필드
+
+[HTML에서 Date 유형의 Input 요소](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)는 "yyyy-mm-dd" 형식의 값을 갖는다. 이를 datetime 유형으로 선언된 속성(attribute)에 할당하는 것은 기본적으로 문제가 되지 않는다. 그러나 다음처럼 정제(normalization)나 검증(validation)이 필요한 경우가 생길 수 있다.
+
+ * Datetime으로 파싱할 수 없는 잘못된 입력이 발생하는 경우
+   datetime 유형의 컬럼에 임의의 문자열 같은 잘못된 값을 할당해보면, 그냥 nil이 할당된다. [이는 type case 과정을 거치게 되기 때문이다.](https://api.rubyonrails.org/v7.1.3.1/classes/ActiveRecord/Base.html#class-ActiveRecord::Base-label-Accessing+attributes+before+they+have+been+typecasted) 문제는 이때 저장을 하면 모델의 errors 속성에 에러가 추가되기를 기대하겠지만 그렇게 되지 않는다는 것이다. 이러면 클라이언트쪽의 문제를 발견하기 어렵고, 원치 않게 값을 저장하게 될 수도 있다.
+   `(attrname)_before_type_case`를 활용하는 방법이 있다. [참고](https://stackoverflow.com/questions/1370926/rails-built-in-datetime-validation)
+ * 시분초를 제외하고 연월일만 저장하고 싶은 경우
+   date 유형으로 바꾸지 않고 datetime에서 연월일만 저장하고 싶다면 레일스 7.1에 추가된 normalize를 활용할 수 있다.
+   ```ruby
+   normalizes :published_at, with: ->(published_at) { published_at&.beginning_of_day }
+   ```
