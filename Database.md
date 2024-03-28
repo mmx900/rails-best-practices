@@ -51,6 +51,7 @@ db/schema.rb:1705:5: C: Rails/ThreeStateBooleanColumn: Boolean columns should al
 ### 데이터 타입
 
 * URL 유형 : https://github.com/perfectline/validates_url
+* URL은 문자열 그대로 다루지 않고 항상 `Addressable::URI.parse(url)&.normalize&.to_s` 정도로 처리를 해두면 여러 오류를 피해갈 수 있다. ([참고](https://github.com/sporkmonger/addressable?tab=readme-ov-file#example-usage)) 예를 들자면 레일스 기본 API를 사용해 `OpenURI.open_uri(url)`같은 코드를 쓸 일이 있는 경우, 한글이 들어간 URL을 사용시 `URI::InvalidURIError (URI must be ascii only)`를 맞닥뜨리게 되지만 위에서 사용한 `normalize`를 사용하면 피해갈 수 있다.
 
 #### Date 필드
 
