@@ -71,3 +71,7 @@ HAML이 간결하지만, ERB는 다음 강점이 있다.
 * https://www.tailwind-kit.com/templates#dashboard
 
 그밖에 https://www.reddit.com/r/webdev/comments/pkx9k9/15_free_alternative_to_tailwind_ui_tailwind/ 에 다양한 다른 라이브러리들이 있다.
+
+## 타겟 HTML 수준
+
+참고 자료 : StatCounter의 [Android Market Share](https://gs.statcounter.com/android-version-market-share/all/south-korea), [iOS Market Share](https://gs.statcounter.com/os-version-market-share/ios/mobile-tablet/south-korea), Google Analytics의 브라우저 정보 등.
