@@ -16,6 +16,7 @@
 * rails-ujs가 나온 배경은 [6.x의 가이드 문서](https://guides.rubyonrails.org/v6.1.0/working_with_javascript_in_rails.html#unobtrusive-javascript)를 참고한다.
 * rails-ujs에서 지원하던 기능들의 대안 기술들은 [7.x의 가이드 문서](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#replacements-for-rails-ujs-functionality)를 참고한다.
 * rails-ujs를 사용하던 기존 프로젝트를 어떻게 Turbo 기준으로 마이그레이션 할 것인가는 [관련 블로그 게시물](https://dev.to/thomasvanholder/how-to-migrate-rails-ujs-to-hotwire-turbo-hdh)을 참고한다.
+* [7.1부터 import 구문이 바뀌었다](https://guides.rubyonrails.org/upgrading_ruby_on_rails.html#import-syntax-from-@rails-ujs-is-modified).
 * rails-ujs는 [7.2에서 공식적으로 삭제될 예정이고](https://github.com/rails/rails/pull/50555), [이미 브랜치에서도 제거되었다](https://github.com/rails/rails/pull/50535).
   * 기존 README는 [삭제 직전 커밋](https://github.com/rails/rails/tree/66c174557a47865e95a5f8fecf54202d0dde92e7/actionview/app/javascript)에서 볼 수 있다.
 
