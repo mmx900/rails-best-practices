@@ -18,6 +18,12 @@
   * [개발 가이드](https://docs.gitlab.com/ee/development/contributing/index.html)
 * https://github.com/mastodon/mastodon (js, react, [AGPL 3.0](https://github.com/mastodon/mastodon/blob/main/LICENSE))
 
+#### 사회적 프로젝트들
+
+* https://github.com/mysociety/alaveteli
+* https://github.com/ifmeorg/ifme
+* https://github.com/RefugeRestrooms/refugerestrooms
+
 ### 그밖에
 
 * https://github.com/asyraffff/Open-Source-Ruby-and-Rails-Apps
