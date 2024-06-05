@@ -75,3 +75,9 @@ HAML이 간결하지만, ERB는 다음 강점이 있다.
 ## 타겟 HTML 수준
 
 참고 자료 : StatCounter의 [Android Market Share](https://gs.statcounter.com/android-version-market-share/all/south-korea), [iOS Market Share](https://gs.statcounter.com/os-version-market-share/ios/mobile-tablet/south-korea), Google Analytics의 브라우저 정보 등.
+
+## Safe Area
+
+모바일 페이지 개발시 상단이 아닌 하단에 붙는 버튼이나 메뉴 등을 고려하고 있다면 안전영역(Safe area)를 고려해야한다. [참고 설명](https://github.com/im-d-team/Dev-Docs/blob/master/CSS/safe-area.md)
+예를 들자면 주소창이 기본으로 상단에 붙어 있고 하단에 홈 인디케이터(Home Indicator)가 표시되는 iOS용 크롬에서 홈 인디케이터와 버튼이 붙는 문제가 발생할 수 있다.
+Tailwind를 사용하고 있다면 [tailwindcss-safe-area](https://github.com/mvllow/tailwindcss-safe-area) 플러그인을 사용하는 것으로 간단히 해결 가능하다.
