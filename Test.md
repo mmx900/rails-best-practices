@@ -1,5 +1,16 @@
 ## 통합 테스트
 
+### 인터넷 연결
+
+비록 테스트 환경을 개발환경이나 다른 환경과 구분해두었다고 하더라도, 의도치 않은 외부 웹 자원으로 연결될 수 있기에 차단해두는 것이 좋다.
+[WebMock](https://github.com/bblimke/webmock)을 적용하면서 다음 메서드를 사용하면 로컬호스트 이외의 모든 연결을 차단할 수 있다.
+
+```ruby
+WebMock.disable_net_connect!(allow_localhost: true)
+```
+
+서비스에서 테스트 환경을 제공하는 경우 각 테스트에서 개별적으로 허용하면 된다.
+
 ### 요소 특정을 위한 라벨 vs 커스텀 속성
 
 `click_on "내 버튼"` vs `find("[data-my-test]").click`
