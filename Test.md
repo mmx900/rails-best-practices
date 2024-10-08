@@ -26,4 +26,13 @@ WebMock.disable_net_connect!(allow_localhost: true)
 
 Capybara의 trigger 설명을 보면, 사용자가 클릭할 수 있는지 여부와 관계없이 동작이 이뤄지는 트리거를 가능한 사용하지 않도록 지시하고 있다. flash 메시지등으로 인해 클릭이 되지 않는 문제는 실제 사용자가 경험하는 문제로, 이것을 trigger로 회피하는 것이 바람직하지 않다.
 
+## 브라우저 테스트에는 Capybara의 메서드 우선 사용
 
+브라우저를 띄워 동작시키는 테스트의 경우, 서버의 응답이 제때 이뤄지지 않는다거나 JS 처리가 느리다거나 하는 등으로 실패가 발생할 수 있다.
+이때 Capybara의 대기 옵션을 사용하면 주어진 기간동안 대기한 후 다시 시도한다. (자세한 내용은 [Capybara README](https://github.com/teamcapybara/capybara/) 참고)
+
+```ruby
+Capybara.default_max_wait_time = 5
+```
+
+이때 주의할 점은 Capybara의 메서드에만 대기 기간이 적용된다는 것이다. 예컨대 `assert_selector`는 Capybaras의 메서드이므로 설정한 대기기간이 적용되지만, rails-dom-testing의 `assert_select`에는 적용되지 않는다.
